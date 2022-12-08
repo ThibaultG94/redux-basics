@@ -7,7 +7,9 @@ import './styles/index.scss';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
+import { applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
+import rootReducer from './reducers';
 
 const store = createStore(
 	rootReducer,
