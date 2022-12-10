@@ -14,15 +14,15 @@ export const getUser = () => {
 	};
 };
 
-export const addUserLike = (data) => {
+export const addUserLike = (user) => {
 	return async (dispatch) => {
 		return axios({
 			method: 'put',
-			url: `http://localhost:3000/posts/${data.id}`,
-			data: { ...data },
+			url: `http://localhost:3000/users/${user.id}`,
+			data: { ...user },
 		})
 			.then((res) => {
-				dispatch({ type: ADD_USER_LIKE, payload: { ...data } });
+				dispatch({ type: ADD_USER_LIKE, payload: { ...user } });
 			})
 			.catch((err) => console.log(err));
 	};
